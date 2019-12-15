@@ -1,0 +1,170 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/05/2017  15:23:20  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\OPENSOURCES\KEIL\C51\BIN\BL51.EXE main.obj TO demo
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  D:\OPENSOURCES\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  demo (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         _DATA_GROUP_
+            DATA    000BH     0001H     UNIT         ?DT?MAIN
+            IDATA   000CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     00D9H     UNIT         ?CO?MAIN
+            CODE    00E7H     0063H     UNIT         ?PR?_PLAY_SONG?MAIN
+            CODE    014AH     0020H     UNIT         ?PR?_DELAY_XMS?MAIN
+            CODE    016AH     000DH     UNIT         ?PR?TIME0_INIT?MAIN
+            CODE    0177H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0183H     000AH     UNIT         ?PR?MAIN?MAIN
+            CODE    018DH     0009H     UNIT         ?PR?TIME0_INT?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   demo (MAIN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  -----    -----
+  +--> ?PR?TIME0_INIT?MAIN
+  +--> ?PR?_PLAY_SONG?MAIN
+
+?PR?_PLAY_SONG?MAIN            0008H    0003H
+  +--> ?CO?MAIN
+  +--> ?PR?_DELAY_XMS?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  demo (MAIN)
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/05/2017  15:23:20  PAGE 2
+
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:014AH         PUBLIC        _Delay_xMs
+  D:000BH         PUBLIC        Count
+  D:00A8H         PUBLIC        IE
+  C:00E7H         PUBLIC        _Play_Song
+  D:00B8H         PUBLIC        IP
+  C:0183H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:016AH         PUBLIC        Time0_Init
+  C:000EH         PUBLIC        SONG
+  D:008CH         PUBLIC        TH0
+  C:018DH         PUBLIC        Time0_Int
+  D:008AH         PUBLIC        TL0
+  B:0090H.5       PUBLIC        _Speak
+  B:0088H.4       PUBLIC        TR0
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          TIME0_INIT
+  C:016AH         LINE#         20
+  C:016AH         LINE#         21
+  C:016AH         LINE#         22
+  C:016DH         LINE#         23
+  C:0170H         LINE#         24
+  C:0173H         LINE#         25
+  C:0176H         LINE#         26
+  -------         ENDPROC       TIME0_INIT
+  -------         PROC          TIME0_INT
+  C:018DH         LINE#         28
+  C:018DH         LINE#         30
+  C:0190H         LINE#         31
+  C:0193H         LINE#         32
+  C:0195H         LINE#         33
+  -------         ENDPROC       TIME0_INT
+  -------         PROC          _DELAY_XMS
+  D:0006H         SYMBOL        x
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:014AH         LINE#         38
+  C:014AH         LINE#         39
+  C:014AH         LINE#         41
+  C:0154H         LINE#         42
+  C:0154H         LINE#         43
+  C:0162H         LINE#         44
+  C:0169H         LINE#         45
+  -------         ENDPROC       _DELAY_XMS
+  -------         PROC          _PLAY_SONG
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/05/2017  15:23:20  PAGE 3
+
+
+  D:0007H         SYMBOL        i
+  -------         DO            
+  D:0001H         SYMBOL        Temp1
+  D:0008H         SYMBOL        Temp2
+  D:0009H         SYMBOL        Addr
+  -------         ENDDO         
+  C:00E7H         LINE#         47
+  C:00E7H         LINE#         48
+  C:00E7H         LINE#         51
+  C:00EAH         LINE#         52
+  C:00F4H         LINE#         53
+  C:00F4H         LINE#         54
+  C:00F4H         LINE#         55
+  C:010BH         LINE#         56
+  C:010EH         LINE#         57
+  C:010EH         LINE#         58
+  C:0110H         LINE#         59
+  C:0117H         LINE#         60
+  C:0119H         LINE#         61
+  C:011CH         LINE#         62
+  C:011DH         LINE#         64
+  C:011DH         LINE#         66
+  C:011DH         LINE#         67
+  C:0135H         LINE#         68
+  C:0137H         LINE#         69
+  C:0137H         LINE#         70
+  C:0137H         LINE#         71
+  C:0139H         LINE#         72
+  C:0140H         LINE#         73
+  C:0145H         LINE#         74
+  C:0145H         LINE#         75
+  C:0148H         LINE#         76
+  -------         ENDPROC       _PLAY_SONG
+  -------         PROC          MAIN
+  C:0183H         LINE#         85
+  C:0183H         LINE#         86
+  C:0183H         LINE#         87
+  C:0186H         LINE#         88
+  C:0186H         LINE#         89
+  C:0186H         LINE#         90
+  C:018BH         LINE#         91
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+Program Size: data=13.0 xdata=0 code=398
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
